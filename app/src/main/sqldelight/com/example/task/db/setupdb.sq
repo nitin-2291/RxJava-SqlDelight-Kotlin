@@ -1,0 +1,28 @@
+CREATE TABLE IF NOT EXISTS User (
+ authorized TEXT NOT NULL,
+ token TEXT NOT NULL,
+ host TEXT NOT NULL,
+ email TEXT NOT NULL,
+ ok TEXT NOT NULL );
+
+ CREATE TABLE IF NOT EXISTS Channels (
+  id TEXT NOT NULL,
+  name TEXT NOT NULL,
+  creator TEXT NOT NULL,
+  group_email TEXT NOT NULL,
+  group_folder_name TEXT NOT NULL );
+
+ insertUser:
+ INSERT OR REPLACE INTO User VALUES(?, ?, ?, ?, ?);
+
+ insertChannels:
+ INSERT OR REPLACE INTO Channels VALUES(?, ?, ?, ?, ?);
+
+ delete:
+ DELETE FROM User;
+
+ deleteChannels:
+ DELETE FROM Channels;
+
+ getAllChannels:
+ SELECT * FROM Channels;
